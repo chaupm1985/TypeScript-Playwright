@@ -5,6 +5,7 @@ import {electCompoSuppliesPage} from "../page-objects/electronic.components.supp
 test("Verify user can buy an item without login",async({page}) =>{
     test.setTimeout(300_000);
     const tc_homePage = new homePage(page);
+    const tc_eleccompsupPage = new electCompoSuppliesPage(page);
     await tc_homePage.navigate();
     await tc_homePage.closeSaleIfexist();
     await tc_homePage.allDepartList.click({delay:2000});
