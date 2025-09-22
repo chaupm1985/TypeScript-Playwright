@@ -16,6 +16,10 @@ export class cartPage{
     readonly placeorderButton:Locator;
     readonly orderproductname:Locator;
     readonly orderthanks:Locator;
+    readonly errorfname:Locator;
+    readonly errorlname:Locator;
+    readonly errorstreet:Locator;
+
 
     constructor(private page:Page){
         this.cartItem = page.locator("(//div[@class='cart-item-details']/a)[1]");
@@ -33,7 +37,10 @@ export class cartPage{
         this.placeorderButton = page.getByRole('button', { name: 'Place order' });
         this.orderproductname = page.locator("//td[@class='woocommerce-table__product-name product-name']");
         this.orderthanks = page.getByText('Thank you. Your order has');
-        this.cashDeliverButton = page.getByRole('radio', { name: 'Cash on delivery' })
+        this.cashDeliverButton = page.getByRole('radio', { name: 'Cash on delivery' });
+        this.errorfname = page.getByText('Billing First name is a');
+        this.errorlname = page.getByText('Billing Last name is a');
+        this.errorstreet = page.getByText('Billing Street address is a');
     }
    
     async fillBillinfo(fname:string,lname:string,country:string,address:string,city:string,phone:string){
