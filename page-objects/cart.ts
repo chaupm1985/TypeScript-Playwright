@@ -12,6 +12,7 @@ export class cartPage{
     readonly zipCode:Locator;
     readonly emailtextbox:Locator;
     readonly phonetextbox:Locator;
+    readonly cashDeliverButton:Locator;
     readonly placeorderButton:Locator;
     readonly orderproductname:Locator;
     readonly orderthanks:Locator;
@@ -32,6 +33,7 @@ export class cartPage{
         this.placeorderButton = page.getByRole('button', { name: 'Place order' });
         this.orderproductname = page.locator("//td[@class='woocommerce-table__product-name product-name']");
         this.orderthanks = page.getByText('Thank you. Your order has');
+        this.cashDeliverButton = page.getByRole('radio', { name: 'Cash on delivery' })
     }
    
     async fillBillinfo(fname:string,lname:string,country:string,address:string,city:string,phone:string){

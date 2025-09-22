@@ -8,6 +8,9 @@ export class electCompoSuppliesPage{
     readonly cartButton:Locator;
     readonly progrid1:Locator;
     readonly progrid2:Locator;
+    readonly sortitemSelect:Locator;
+    readonly firstlowitemprice:Locator;
+    readonly firsthighitemprice:Locator;
 
     constructor(private page:Page){
         this.gridviewForm = page.locator("//div[contains(@class,'products-grid')]")
@@ -18,6 +21,9 @@ export class electCompoSuppliesPage{
         this.cartButton = page.locator("//div[contains(@class,'header-cart') and contains(@class,'et-content-toTop')]/a")
         this.progrid1 = page.getByRole('link', { name: 'Add “Canon i-SENSYS LBP6030W' }).nth(1)
         this.progrid2 = page.getByRole('link', { name: 'Add “DJI Mavic Pro Camera' }).nth(1)
+        this.sortitemSelect = page.getByLabel('Shop order');
+        this.firstlowitemprice = page.getByText('$129.00').nth(1)
+        this.firsthighitemprice = page.getByText('$1,999.00').nth(1)
     }
 
 }
