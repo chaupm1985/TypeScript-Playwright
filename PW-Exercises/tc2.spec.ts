@@ -5,7 +5,7 @@ import {electCompoSuppliesPage} from "../page-objects/electronic.components.supp
 import {cartPage} from "../page-objects/cart.ts";
 
 test("Verify user can buy multiple item successfully",async({page}) =>{
-    test.setTimeout(300_000);
+    test.setTimeout(120_000);
     const tc_homePage = new homePage(page);
     const tc_loginPage = new myAccountPage(page);
     const tc_myaccountPage = new myAccountPage(page);

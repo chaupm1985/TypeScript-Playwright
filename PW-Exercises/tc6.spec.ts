@@ -4,7 +4,7 @@ import {electCompoSuppliesPage} from "../page-objects/electronic.components.supp
 import {cartPage} from "../page-objects/cart.ts";
 
 test("Verify user try to buy an item without login",async({page}) =>{
-    test.setTimeout(300_000);
+    test.setTimeout(120_000);
     const tc_homePage = new homePage(page);
     const tc_eleccompsupPage = new electCompoSuppliesPage(page);
     const tc_cartPage = new cartPage(page);
