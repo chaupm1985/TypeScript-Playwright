@@ -10,6 +10,7 @@ export class cartPage{
     readonly cityTextbox:Locator;
     readonly stateSelect:Locator;
     readonly zipCode:Locator;
+    readonly emailtextbox:Locator;
     readonly phonetextbox:Locator;
     readonly placeorderButton:Locator;
     readonly orderproductname:Locator;
@@ -27,6 +28,7 @@ export class cartPage{
         this.stateSelect = page.locator("//select[@id='billing_state']");
         this.zipCode = page.getByRole('textbox', { name: 'ZIP Code *' });
         this.phonetextbox = page.getByRole('textbox', { name: 'Phone *' });
+        this.emailtextbox = page.getByRole('textbox', { name: 'Email address *' })
         this.placeorderButton = page.getByRole('button', { name: 'Place order' });
         this.orderproductname = page.locator("//td[@class='woocommerce-table__product-name product-name']");
         this.orderthanks = page.getByText('Thank you. Your order has');
@@ -39,5 +41,15 @@ export class cartPage{
         await this.addressTextbox.fill(address);
         await this.cityTextbox.fill(city);
         await this.phonetextbox.fill(phone);
+    }
+
+        async fillBillGuestinfo(fname:string,lname:string,country:string,address:string,city:string,phone:string,email:string){
+        await this.firstnameTextbox.fill(fname);
+        await this.lastnameTextbox.fill(lname);
+        await this.countryselector.selectOption(country);
+        await this.addressTextbox.fill(address);
+        await this.cityTextbox.fill(city);
+        await this.phonetextbox.fill(phone);
+        await this.emailtextbox.fill(email);
     }
 }
