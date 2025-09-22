@@ -19,6 +19,8 @@ export class cartPage{
     readonly errorfname:Locator;
     readonly errorlname:Locator;
     readonly errorstreet:Locator;
+    readonly clearCart:Locator;
+    readonly cartemptyLabel:Locator;
 
 
     constructor(private page:Page){
@@ -41,6 +43,8 @@ export class cartPage{
         this.errorfname = page.getByText('Billing First name is a');
         this.errorlname = page.getByText('Billing Last name is a');
         this.errorstreet = page.getByText('Billing Street address is a');
+        this.clearCart = page.getByText('Clear shopping cart');
+        this.cartemptyLabel = page.getByRole('heading', { name: 'YOUR SHOPPING CART IS EMPTY' });
     }
    
     async fillBillinfo(fname:string,lname:string,country:string,address:string,city:string,phone:string){
